@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup , FormControl} from '@angular/forms';
+import { FormGroup , FormControl, Form} from '@angular/forms';
 import { Router } from '@angular/router';
+import { MyappServicesService } from '../providers/myapp-services.service';
 
 @Component({
   selector: 'app-registerpage',
@@ -9,35 +10,41 @@ import { Router } from '@angular/router';
 })
 export class RegisterpageComponent implements OnInit {
 
-  user:any={
-    name:"",
-    email:"",
-    password:"",
-    number:"",
-  }
-
-  ngForm = new FormGroup({
+ 
+  registerForm = new FormGroup({
     name: new FormControl(''),
+    phone: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
-    number: new FormControl('')
+    
 
   })
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private _auth:MyappServicesService) { }
 
   ngOnInit(): void {
   }
 register(){
-  const controls = this.ngForm.controls;
+  const controls = this.registerForm.controls;
 
   Object.keys(controls).forEach(key => {
     controls[key].markAsTouched();
   });
-  console.log(this.ngForm.status);
+  // console.log(ngForm.status);
+  console.log(this.registerForm.value);
   
-  if(this.ngForm.status=="VALID"){
+ this._auth.register(this.registerForm.value).subscribe(
+   (res)=>{
+     console.log(res);
+
+   },
+   (error)=>{
+     console.log(error);
+     
+   }
+ )
     this.router.navigate(['./login'])
-  }
+  
 }
+
 }
