@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "cloud-collab-analytics"
+  "defaultProject": "cloud-collab-analytics",
+  "cli": {
+    "analytics": "3d483c63-a71f-44bb-bef6-e8c9e29418a6"
+  }
 }

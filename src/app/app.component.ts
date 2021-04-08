@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cloud-collab-analytics';
+  constructor(private _router:Router) { }
+  profile(){
+    this._router.navigate(['./profile'])
+  }
+  maps(){
+    this._router.navigate(['./map'])
+  }
+
+
+
 }
