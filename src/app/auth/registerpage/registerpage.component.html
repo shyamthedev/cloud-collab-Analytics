@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <form>
                 <div class="card">
                     <div class="card-header">
                         <h4>registration page</h4>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Register</button>
-                        <a [routerLink]="['/login']">Login</a>
+                        <a [routerLink]="['auth/login']">Login</a>
                     </div>
                 </div>
             </form>
