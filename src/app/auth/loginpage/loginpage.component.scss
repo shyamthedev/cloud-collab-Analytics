@@ -1,0 +1,41 @@
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20%;
+  }
+  .email{
+      text-transform: lowercase;
+  }
+  .container{
+      width: 600px;
+  }
+  h4{
+    text-transform: uppercase;
+  }
+  .btn-primary{
+      float: right;
+      text-transform: uppercase;
+      color: #ffffff;
+  }
+ 
+//   .row {
+//     height: 100vh;
+//   }
+//   .p-r-10 {
+//     padding-right: 10px;
+//   }
+//   .pull-right {
+//     float: right;
+//   }
+  
+//   .pull-left {
+//     float: left;
+//   }
+  
+//   .button-section {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//   }
+  
