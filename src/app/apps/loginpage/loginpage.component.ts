@@ -1,5 +1,6 @@
 import { group } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './loginpage.component.html',
   styleUrls: ['./loginpage.component.scss']
 })
+
 export class LoginpageComponent implements OnInit {
   user: any = {
     email : "",

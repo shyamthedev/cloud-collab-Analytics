@@ -8,8 +8,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { MapsComponent } from './views/maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router'
-// import { AppRoutingModule } from './app-routing.module';
-// import { AppComponent } from './app.component';
 import { LoginpageComponent } from './apps/loginpage/loginpage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
