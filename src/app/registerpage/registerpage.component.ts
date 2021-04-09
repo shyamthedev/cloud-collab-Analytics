@@ -24,6 +24,7 @@ export class RegisterpageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 register(){
   const controls = this.registerForm.controls;
 

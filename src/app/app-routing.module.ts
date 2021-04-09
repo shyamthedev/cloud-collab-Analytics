@@ -1,9 +1,7 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginpageComponent } from './apps/loginpage/loginpage.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
-import { RegisterpageComponent } from './registerpage/registerpage.component';
+import { authRoutes } from './auth/auth-routing.module';
+import { featureRoutes } from './feature/feature-routing';
 
 const routes: Routes = [
   {
@@ -11,22 +9,8 @@ const routes: Routes = [
     redirectTo:'/login',
     pathMatch:'full'
   },
-  {
-    path: 'login',
-    component: LoginpageComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'registration',
-    component: RegisterpageComponent
-  },
-  {
-    path: 'change-password',
-    component: ForgetpasswordComponent
-  }
+  ...authRoutes,
+  ...featureRoutes
 ];
 
 @NgModule({
