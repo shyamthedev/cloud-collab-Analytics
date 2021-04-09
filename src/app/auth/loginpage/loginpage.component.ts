@@ -9,11 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./loginpage.component.scss']
 })
 export class LoginpageComponent implements OnInit {
-  user: any = {
-    email : "",
-    password : ""
-  }
-  ngForm = new FormGroup({
+ 
+  loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
   })
@@ -25,18 +22,6 @@ export class LoginpageComponent implements OnInit {
   }
 
   onSubmit(){
-   
-    
-  const controls = this.ngForm.controls;
-
-  Object.keys(controls).forEach(key => {
-    controls[key].markAsTouched();
-  });
-  console.log(this.ngForm.status);
-  
-  if(this.ngForm.status=="VALID"){
-    this.router.navigate(['./dashboard'])
-  }
-   
+    console.log(this.loginForm.value);
  }
 }

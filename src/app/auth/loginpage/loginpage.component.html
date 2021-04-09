@@ -5,27 +5,28 @@
                 <div class="card-header">
                     <h4>login</h4>
                 </div>
-                <form [formGroup]="ngForm" (ngSubmit)="onSubmit()">
+                <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    
                 <div class="card-body">
                    
                         <div class="form-group">
                             <input class="form-control email" formControlName="email"  type="email" placeholder="Email" required/>
-                            <span class="help-block text-danger" *ngIf="ngForm.controls.email.touched && !ngForm.controls.email.valid">
+                            <span class="help-block text-danger" *ngIf="loginForm.controls.email.touched && !loginForm.controls.email.valid">
                                 <small>email is required</small>
                               </span>
                         </div>
                         <div class="form-group mt-3">
                             <input class="form-control" formControlName="password" type="password" placeholder="Password" required/>
-                            <span class="help-block text-danger" *ngIf="ngForm.controls.password.touched && !ngForm.controls.password.valid ">
+                            <span class="help-block text-danger" *ngIf="loginForm.controls.password.touched && !loginForm.controls.password.valid ">
                                 <small>password is required</small>
                               </span>
                         </div>
                 </div>
                 <div class="card-footer">
-                    <a [routerLink]="['/registration']">Register</a>
+                    <a [routerLink]="['auth/register']">Register</a>
                     <div> <button type="submit" class="btn btn-primary">Login</button>
                     </div> 
-                    <a [routerLink]="['/change-password']">forget password</a>
+                    <a [routerLink]="['auth/forget-password']">forget password</a>
                 </div>
             </form>
             </div> 
