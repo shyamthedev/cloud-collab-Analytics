@@ -5,15 +5,18 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AuthModule } from './auth/auth.module';
+// import { RoleModule } from './role/role.module';
 @NgModule({
   declarations: [
     AppComponent,
-  ],
+    ],
   imports: [
     BrowserModule,
-    AuthModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
+    // RoleModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,43 @@
+<!-- <p>rolelist works!</p> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            Role List
+          </h3>
+          <button class="btn btn-primary" (click)="addRole()">Add Role</button>
+        </div>
+        <div class="card-body">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Role</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let role of getroles; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ role.role }}</td>
+                <td>
+                  <div>{{ role.createdAt | date: "short" }}</div>
+                </td>
+                <td>{{ role.updatedAt | date: "short" }}</td>
+                <td>
+                  <i class="bi bi-trash-fill p-3" (click)='deleteRole(role._id)'></i>
+                  <i class="bi bi-pencil p-3" (click)="editRole(role)"></i>
+                  <i class="bi bi-eye-fill p-3" (click)="showDetails(role)"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

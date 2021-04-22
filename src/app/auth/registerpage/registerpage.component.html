@@ -1,57 +1,42 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <form>
-                <div class="card">
-                    <div class="card-header">
-                        <h4>registration page</h4>
-                    </div>
-
-                    <div class="card-body">
-
+            <div class="card">
+                <div class="card-header">Register page</div>
+                <div class="card-body">
+                    <form [formGroup]='registrationForm' (ngSubmit)="formSubmit(registrationForm.value)">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" formControlName="name" type="text" placeholder="Enter your name"
-                                required />
-                            <span class="text-danger"
-                                *ngIf="registerForm.controls.name.touched && !registerForm.controls.name.valid">
+                            <input class="form-control" formControlName='name' placeholder="Name">
+                            <span class="text-danger" *ngIf='registrationForm.controls.name.invalid && registrationForm.controls.name.touched'>
                                 <small>name is required</small>
                             </span>
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input class="form-control email" formControlName="email" type="email"
-                                placeholder="Enter your email" required />
-                            <span class="text-danger"
-                                *ngIf="registerForm.controls.email.touched && !registerForm.controls.email.valid">
+                            <input class="form-control" formControlName='phone' placeholder="Phone">
+                            <span class="text-danger" *ngIf='registrationForm.controls.phone.invalid && registrationForm.controls.phone.touched'>
+                                <small>Phone is required</small>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" formControlName='email' placeholder="Email">
+                            <span class="text-danger" *ngIf='registrationForm.controls.email.invalid && registrationForm.controls.email.touched'>
                                 <small>email is required</small>
                             </span>
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <input class="form-control" formControlName="password" type="password"
-                                placeholder="Enter your password" required />
-                            <span class="text-danger"
-                                *ngIf="registerForm.controls.password.touched && !registerForm.controls.password.valid">
-                                <small>enter your password</small>
+                            <input type='password' class="form-control" formControlName='password' placeholder="Password">
+                            <span class="text-danger" *ngIf='registrationForm.controls.password.invalid && registrationForm.controls.password.touched'>
+                                <small>password is required</small>
                             </span>
                         </div>
                         <div class="form-group">
-                            <label>Number</label>
-                            <input class="form-control" formControlName="phone" type="number"
-                                placeholder="Enter your number"required />
-                            <span class="text-danger"
-                                *ngIf="registerForm.controls.phone.touched && !registerForm.controls.phone.valid">
-                                <small>number is required</small>
-                            </span>
+                            <button class='btn-primary' type="submit" [disabled]='registrationForm.invalid'> Register</button>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Register</button>
-                        <a [routerLink]="['auth/login']">Login</a>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
+

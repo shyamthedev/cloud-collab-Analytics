@@ -7,11 +7,24 @@ const routes: Routes = [
     redirectTo: '/auth/login',
     pathMatch: 'full',
   },
+  
   {
-    path: 'client',
+    path: 'client', 
     loadChildren: () =>
       import('./client/client.module').then((m) => m.ClientModule),
   },
+  {
+    path:'role',
+    loadChildren:()=> 
+      import('./role/role.module').then((m)=> m.RoleModule)
+       
+  }
+  // {
+  //   path: '',
+  //   redirectTo: '/role/rolelist',
+  //   pathMatch: 'full',
+  // },
+ 
 ];
 
 @NgModule({
