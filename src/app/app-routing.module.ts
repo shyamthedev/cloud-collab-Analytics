@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -19,12 +19,6 @@ const routes: Routes = [
       import('./role/role.module').then((m)=> m.RoleModule)
        
   }
-  // {
-  //   path: '',
-  //   redirectTo: '/role/rolelist',
-  //   pathMatch: 'full',
-  // },
- 
 ];
 
 @NgModule({
