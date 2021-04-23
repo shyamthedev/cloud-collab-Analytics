@@ -35,6 +35,7 @@ export class AddroleComponent  {
         console.log(error,'addRole()');
       }
     );
+    this.addRoleForm.reset();
   }
   back(){
     this.router.navigate(['/role/roleList/'])

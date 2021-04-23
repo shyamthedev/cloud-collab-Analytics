@@ -2,15 +2,16 @@ button.btn-success:disabled{
     background-color:white;
     color: black;
 }
-.row{
-    height: 100vh;
-}
-.card-header{
+// .row{
+//     height: 100vh;
+// }
+.container-fluid{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    height: 95vh;
+}
+.btn-sm{
+    height: 30px;
 }
 
-// .card{
-//     width: '30 rem';
-// }

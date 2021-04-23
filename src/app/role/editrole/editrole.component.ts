@@ -58,6 +58,7 @@ export class EditroleComponent {
         console.log(error, 'updateRole()');
       }
     );
+    this.updateRoleForm.reset();
   }
   back(){
     this.router.navigate(['/role'])
