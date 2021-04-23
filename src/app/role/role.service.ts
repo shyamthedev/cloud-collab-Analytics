@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import {Response} from './respose';
 
 const uri = environment.uri;
 
@@ -30,9 +31,4 @@ export class RoleService {
   }
 }
 
-export interface Response {
-  status: string;
-  code: number;
-  data: any;
-  message: string;
-}
+
